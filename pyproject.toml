@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bolabuster"
+version = "0.1.0"
+description = "Authorized IDOR/BOLA scanner"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx",
+    "PyYAML",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "respx",
+]
+
+[project.scripts]
+bolabuster = "bolabuster.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["bolabuster*"]

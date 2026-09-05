@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+
+# --- bolabuster operational hygiene ---
+# Do NOT commit real identity configs (they hold live tokens/cookies)
+# or scan reports (repro_curl embeds live attacker credentials).
+# Keep only the sanitized files under examples/.
+identities.y*ml
+scope.y*ml
+!examples/identities.y*ml
+!examples/scope.y*ml
+reports/
+*.report.json
+*.report.txt
+
+# Interne Wiederaufnahme-Notiz, nicht veroeffentlichen
+HANDOFF.md
+
+# Interne Manager-/Team-Konfiguration (Subagent-Setup), nicht fuers oeffentliche Repo
+.claude/
+.codex/
+CLAUDE.md
+AGENTS.md

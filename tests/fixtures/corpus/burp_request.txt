@@ -1,0 +1,6 @@
+POST /api/v1/orders/42 HTTP/1.1
+Host: api.example.com
+Accept: application/json
+Authorization: Bearer bob-token
+
+{"note": "update order 42"}

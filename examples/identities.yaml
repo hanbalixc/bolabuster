@@ -1,0 +1,24 @@
+# Example identities for bolabuster.
+# These are FAKE credentials for demonstration purposes only.
+# Replace with real session tokens/credentials from your authorized test environment.
+
+identities:
+  - name: alice
+    auth:
+      type: bearer
+      token: "EXAMPLE-alice-session-token-abc123xyz"
+    headers:
+      X-User-Agent: "test-alice-device"
+    known_object_ids:
+      - "1001"
+      - "2001"
+      - "3001"
+
+  - name: bob
+    auth:
+      type: bearer
+      token: "EXAMPLE-bob-session-token-def456uvw"
+    known_object_ids:
+      - "1002"
+      - "2002"
+      - "3002"

@@ -1,0 +1,41 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": { "name": "Query" },
+      "types": [
+        {
+          "kind": "OBJECT",
+          "name": "Query",
+          "fields": [
+            {
+              "name": "user",
+              "args": [
+                {
+                  "name": "id",
+                  "type": { "kind": "NON_NULL", "name": null, "ofType": { "kind": "SCALAR", "name": "ID" } }
+                }
+              ],
+              "type": { "kind": "OBJECT", "name": "User", "ofType": null }
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "User",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": { "kind": "NON_NULL", "name": null, "ofType": { "kind": "SCALAR", "name": "ID" } }
+            },
+            {
+              "name": "email",
+              "args": [],
+              "type": { "kind": "SCALAR", "name": "String", "ofType": null }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

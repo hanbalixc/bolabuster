@@ -1,0 +1,46 @@
+# Example scope configuration for bolabuster.
+#
+# CRITICAL: authorization.confirmed MUST be true.
+# This is a hard gate — scans fail (exit code 3) without it.
+#
+# This example targets a fake example.com API and is meant for dry-run testing only.
+
+authorization:
+  confirmed: true
+  engagement_ref: "example-pentest-2025-02"
+
+target:
+  # Exactly one host per scan. All requests must target this base URL.
+  base_url: "https://api.example.com"
+
+  # Allow these endpoint paths (glob patterns).
+  # Must include at least one entry.
+  allow_paths:
+    - "/api/v1/users/*"
+    - "/api/v1/posts/*"
+    - "/api/v1/comments/*"
+
+  # Optional: deny these paths (takes precedence over allow_paths).
+  deny_paths:
+    - "/api/v1/admin/*"
+    - "/api/v1/internal/*"
+
+limits:
+  # Rate limit: requests per second (default 3.0).
+  rate_per_sec: 3.0
+
+  # Maximum total requests per scan (default 5000).
+  max_requests: 5000
+
+  # HTTP request timeout in seconds (default 15.0).
+  timeout_sec: 15.0
+
+enumeration:
+  # Enable ID enumeration strategy (requires --enumerate flag).
+  # Default false (disabled).
+  enabled: false
+
+  # How many neighboring IDs to test around discovered IDs.
+  # For example, if ID 1001 is found, test IDs 996-1006.
+  # Default 5.
+  neighbor_range: 5
